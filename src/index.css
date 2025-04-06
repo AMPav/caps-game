@@ -1,1 +1,52 @@
-body { font-family: sans-serif; background: #f7f7f7; }
+/* index.css */
+
+body {
+  font-family: sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Фишка в стопке и на поле */
+.fishka {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff4444, #aa0000);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+/* Анимация вылета и падения фишки */
+.fly-cap {
+  top: -50px;
+  animation: drop 0.8s ease-out forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(-50%, -200px) scale(1.2) rotate(-720deg);
+    opacity: 0;
+  }
+  80% {
+    transform: translate(-50%, 180px) scale(1) rotate(10deg);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(-50%, 160px) scale(1.05);
+  }
+  100% {
+    transform: translate(-50%, 200px) scale(1);
+  }
+}
